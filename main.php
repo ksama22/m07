@@ -13,15 +13,13 @@
 </head>
 <body>
 <?php
-$host = "localhost";
-$name = "productdb";
-$user = "root";
-$passwd = "";
-$connection = new mysqli($host, $user, $passwd, $name);
-
-$query = "SELECT * FROM products";
+include 'conection.php';
+$query = "SELECT * FROM products ";
 $mysqlquery = mysqli_query($connection, $query);
 ?>
+<div class="container">
+ <a href="form_add.php"><button type="button" class="btn btn-outline-primary">Add</button></a>
+
 <table class="table">
     <thead>
     <tr>
@@ -29,19 +27,27 @@ $mysqlquery = mysqli_query($connection, $query);
         <th scope="col">Name</th>
         <th scope="col">Description</th>
         <th scope="col">Price</th>
+        <th scope="col">Buttons</th>
+
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($mysqlquery as $i => $product){ ?>
-    <tr>
-        <th scope="row"><?php echo $i + 1 ?></th>
-        <td><?php echo $product['name'] ?></td>
-        <td><?php echo $product['description'] ?></td>
-        <td><?php echo $product['price'] ?></td>
-    </tr>
+    <?php foreach ($mysqlquery as $i => $product) { ?>
+        <tr>
+            <th scope="row"><?php echo $i + 1 ?></th>
+            <td><?php echo $product['name'] ?></td>
+            <td><?php echo $product['description'] ?></td>
+            <td><?php echo $product['price'] ?></td>
+            <td>
+            <td><a href="edit.php?id=<?php echo $product['id']?>"><button type="button" class="btn btn-outline-primary">Edit</button></a></td>
+            <td><a href="delete.php?id=<?php echo $product['id']?>"><button type="button" class="btn btn-outline-danger">Delete</button></a></td>
+
+            </td>
+        </tr>
     <?php } ?>
     </tbody>
 </table>
+</div>
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
