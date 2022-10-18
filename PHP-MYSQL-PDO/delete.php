@@ -8,5 +8,5 @@ if (isset($_GET['id'])) {
 }
 echo 'Deleted ', $id;
 ?>
-<a href="./main.php">Back</a>
+<a href="index.php">Back</a>
 
