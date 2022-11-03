@@ -9,7 +9,7 @@ $q_sold= $_GET['q_sold'];
 
 try {
     //Crica la conexio i prepara una query
-    $stmt = $connexio->prepare("INSERT INTO Products (name,description, price, q_sold) VALUES (:name,:description,:price,:q_sold)");
+    $stmt = $connexio->prepare("INSERT INTO products (name,description, price, q_sold) VALUES (:name,:description,:price,:q_sold)");
 
     //$stmt->bindParam(':id', $id); // la id es autoincrement, no fa falta
     $stmt->bindParam(':name', $name); // Se enlaza a la variable
