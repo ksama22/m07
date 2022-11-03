@@ -40,6 +40,9 @@ $mydata = $stmt->fetchAll();
                         <div class=form-group>
                             <input type="text" name="price" class="form-control "value="<?php echo $product['price'] ?>" placeholder="price">
                         </div>
+                        <div class=form-group>
+                            <input type="number" name="q_sold" class="form-control "value="<?php echo $product['q_sold'] ?>" placeholder="q_sold">
+                        </div>
                         <input type="submit" class="btn btn-success btn-block" value="Modify Producte">
                     </form>
                     <?php
