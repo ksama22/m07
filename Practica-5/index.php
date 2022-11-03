@@ -26,6 +26,7 @@ $mydata = $stmt->fetchAll();
         <th scope="col">Name</th>
         <th scope="col">Description</th>
         <th scope="col">Price</th>
+        <th scope="col">q_Sold</th>
         <th scope="col">Buttons</th>
     </tr>
     </thead>
@@ -37,6 +38,7 @@ $mydata = $stmt->fetchAll();
             <td><?php echo $product['name'] ?></td> <!--Accedim a Name-->
             <td><?php echo $product['description'] ?></td> <!--Accedim a Description-->
             <td><?php echo $product['price'] ?></td> <!--Accedim a Price -->
+            <td><?php echo $product['q_sold'] ?></td> <!--Accedim a q_Sold -->
             <td><a href="update_form_product.php?id=<?php echo $product['id'] ?>">
                     <button type="button" class="btn btn-outline-primary">Edit</button>
                 </a></td>
@@ -64,6 +66,9 @@ $mydata = $stmt->fetchAll();
                     </div>
                     <div class=form-group>
                         <input type="text" name="price" class="form-control" placeholder="price">
+                    </div>
+                    <div class=form-group>
+                        <input type="text" name="q_sold" class="form-control" placeholder="q_sold">
                     </div>
                     <input type="submit" class="btn btn-success btn-block" name="add_product" value="+ Producte">
                 </form>
